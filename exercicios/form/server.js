@@ -1,8 +1,12 @@
-const express = require('express')
+const express = require('express');
 const app = express()
 const bodyParser = require('body-parser')
  
-app.use(bodyParser.urlencoded({ extended: true}))
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: true
+}));
+
  
 app.post('/usuarios', (req, resp) => {
  
@@ -10,4 +14,4 @@ app.post('/usuarios', (req, resp) => {
     resp.send('<h1>Parabéns</h1>')
 })
  
-app.listen(5500, () => console.log("ouvindo a porta 5500"))
+app.listen(5500)
